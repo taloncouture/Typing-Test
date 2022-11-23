@@ -27,7 +27,7 @@ typing_file.close()
 
 pygame.font.init()
 
-my_font = pygame.font.SysFont('Comic Sans MS', int(SCREEN_HEIGHT / 10))
+my_font = pygame.font.SysFont('Arial', int(SCREEN_HEIGHT / 10))
 
 BACKGROUND_COLOR = (255, 255, 255)
 TEXT_COLOR = (0, 0, 0)
@@ -106,7 +106,7 @@ def get_keys(event):
 
     return selected_character
 
-start_button_size = (SCREEN_WIDTH / 6, SCREEN_HEIGHT / 15)
+start_button_size = (SCREEN_WIDTH / 5, SCREEN_HEIGHT / 10)
 start_rect = ((SCREEN_WIDTH / 2) - (start_button_size[0] / 2), SCREEN_HEIGHT / 3, start_button_size[0], start_button_size[1])
 
 def get_wpm(string, time):
@@ -144,13 +144,10 @@ while True:
                         width, height = my_font.size(key_pressed)
                         offset += width
                     else:
-                        print('finished')
                         if endtime == 0:
                             endtime = pygame.time.get_ticks()
                         duration = (endtime - starttime) / 1000
-                        print(duration)
                         WPM = get_wpm(typing_text, duration)
-                        print(get_wpm(typing_text, duration))
 
                 elif key_pressed != text_list[text_index]:
                     if pygame.key.get_mods() & pygame.KMOD_SHIFT:
@@ -165,7 +162,6 @@ while True:
                     can_type = True
                     if starttime == 0:
                         starttime = pygame.time.get_ticks()
-                        print(starttime)
 
     if starttime != 0:
         if endtime == 0:
