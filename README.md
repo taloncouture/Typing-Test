@@ -1,7 +1,7 @@
 # Typing-Test
 This is a typing test app made with python using the pygame library. This will display words per minute and accuracy.
 
-##Instructions
+## Instructions
 Python 3 needs to be downloaded.
 Run the main.py file.
 
